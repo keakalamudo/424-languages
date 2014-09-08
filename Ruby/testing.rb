@@ -1,25 +1,14 @@
-def analyze(sys, usr)
-  count1 = 0
-  count2 = 0
-  sys.zip(usr).each do |a, b|
-    if a == b
-      count1= count1+1
-      a = 'x'
-      b = 'y'
-    end
+h = {hashes: "awesome", ruby: "rabbit", rails: "bunny"}
+h.each do |key, val|
+  if val == "rabbit"
+    puts "#{key} => #{val}" # prints each key and value.
   end
-  print "In-place Counter: "
-  print count1
-
-  print "\nUnique Counter: "
-  print count2
-
 end
 
-class Testing
-  count = 0
-  ok =  ['e','e','e','e']
-  ok2 =  ['e','d','e','r']
-
-  analyze(ok,ok2)
+h.each do |key, value|
+  puts key
+  value.each do |k,v|
+    puts k
+    puts v
+  end
 end
