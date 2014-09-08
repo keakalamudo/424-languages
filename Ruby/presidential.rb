@@ -33,7 +33,7 @@ class Presidential
   #Iterate through the Hash nad print out every match.
 
   presidentialList.each_value do |keys , val|
-    if val == "2"
+    if val == "3"
       puts "#{keys} => #{val}"
     end
   end
