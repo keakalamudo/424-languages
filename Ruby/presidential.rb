@@ -27,15 +27,12 @@ class Presidential
 
   puts "Please enter the birth month of the President you are searching for:"
   usrInput = gets.chomp
-  #print usrInput
-  #puts presidentialList.key(usrInput)
-  #puts presidentialList.fetch(:Washington)
-  #Iterate through the Hash nad print out every match.
 
-  presidentialList.each_value do |keys , val|
-    if val == "3"
-      puts "#{keys} => #{val}"
+  presidentialList.each do |key, array|
+    array.each do |v|
+      if v == usrInput
+        puts "#{key} => #{array}"
+      end
     end
   end
-
 end
