@@ -16,6 +16,8 @@ be displayed..
 =end
 require 'prime'
 
+display{ print parray }
+
 def vowel(*argString)
   argString.each {|x|if x.scan(/[aeiou]/).count>=2
       puts x
@@ -23,6 +25,7 @@ def vowel(*argString)
 end
 
 def primes(max)
+  yield "See Primes below: "
   parray= []
   Prime.each(max) do |p|
     parray << p
@@ -31,4 +34,4 @@ def primes(max)
 end
 
 vowel('Cat','Orange','Banana', 'Bat', 'Greece', 'Java', 'Study', 'Aardvak', 'Sweden')
-primes(12)
+primes(79){|i| puts i}
