@@ -30,7 +30,5 @@ def primes(max)
   print parray
 end
 
-primes(12)
-puts
 vowel('Cat','Orange','Banana', 'Bat', 'Greece', 'Java', 'Study', 'Aardvak', 'Sweden')
-
+primes(12)
