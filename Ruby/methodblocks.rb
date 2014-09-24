@@ -15,15 +15,22 @@ remaining numbers are prime and must be yielded to the block so they will
 be displayed..
 =end
 require 'prime'
-
 display{ print parray }
 
+#The vowel method accepts a variable number of arguments and returns an array of
+#strings with multiple vowels.
+
 def vowel(*argString)
+  strArray = []
   argString.each {|x|if x.scan(/[aeiou]/).count>=2
-      puts x
+      strArray << x
     end}
+  print strArray
+  puts
 end
 
+#The primes method utilizes a block and yield statement to display prime numbers from
+#2 up to the parameter passed.
 def primes(max)
   yield "See Primes below: "
   parray= []
