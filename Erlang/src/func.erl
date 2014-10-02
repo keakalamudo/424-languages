@@ -20,7 +20,7 @@
 -author("Kelo Akalamudo").
 
 %% API
--export([square/1],[sum/2]).
+-export([square/1,sum/2,num/1]).
 
 
 %%%------
@@ -28,8 +28,21 @@
 pow(X) -> X*X.
 square(0) -> [];
 square(N) when N>0 ->
-  X = random:uniform(N),
+  X = random:uniform(),
   [pow(X)|square(N-1)].
 
+sum([],[]) -> [];
+sum(X,Y) ->
+[H|T]=X,
+[H2|T2] =Y,
+[H+H2|sum(T,T2)].
 
-sum() -> [];
+
+num(L) -> num(L,0).
+
+num([],Count) ->Count;
+num([H|T], Count) when
+      H<1 ->
+        num(T, Count+1);
+num([_|T],Count) -> num(T,Count).
+
