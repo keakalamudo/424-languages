@@ -1,0 +1,75 @@
+CECS 424 
+Lab 5
+Erlang Functions
+
+
+Write Erlang functions squares, sum, and num. 
+
+squares has one integer parameter N and returns a list of size N of the 
+squares of float random numbers, one for each position in the list.  Use 
+the 
+random:uniform() to generate a random number. If you want to create a seed 
+that depends on the time you could use
+{A1,A2,A3} = now(),
+random:seed(A1, A2, A3),
+
+
+sum has two list parameters of the same size. The list entries are floats. 
+sum returns a list in which each element is the sum of the corresponding 
+elements of the arguments.
+
+num has a list parameter and returns an integer.  It returns the number of 
+elements of the list that are less than 1.
+
+Each function must be implemented recursively (the normal Erlang 
+approach).
+
+
+makeList() ->
+  L = [],
+  io:fwrite("List size: ~p",[num(L)]).
+
+num(L) ->
+  length([X || X<- L, X<1]).
+
+
+num(L) -> num(L,0).
+num([H|T], Count) when H<1 -> num(T, Count+1);
+num([_|T],Count) -> num(T,Count);
+num([],Count) ->num(count).
+
+
+
+====================
+
+printList(FileName) ->
+  {ok, Device} = file:open(FileName,[read]),
+  try read_lines(Device)
+  after file:close(Device)
+  end.
+
+read_lines(Device) ->
+  case io:get_line(Device, "") of
+    eof  -> [];
+    Line -> Line ++ read_lines(Device)
+  end.
+
+===========================
+
+
+
+printList(FileName) ->
+  {ok, Device} = file:open(FileName,[read]),
+  try readline(Device)
+    after file:close(Device)
+  end,
+Data = string:tokens(Device, ", "),
+io:format(Data).
+
+readline(Device) ->
+  case io:get_line(Device, "\ ") of
+    eof  -> []
+  end.
+
+================================
+
