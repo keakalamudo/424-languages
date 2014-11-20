@@ -1,0 +1,26 @@
+CECS 424 Assignment 9
+
+Write a Clojure program to determine the word frequencies in emma.txt, the 
+text of the novel Emma by Jane Austen, found on the course site. 
+
+Write a function with two parameters, a hash table and a word that returns 
+a new hash table with the word added appropriately. Use the Java 
+toLowerCase method to enforce case insensitivity. If the word is not a key 
+in the hash, then add it with frequency one, otherwise increase its 
+frequency. Use the merge-with function. (Actually you are creating a new 
+table with these changes.)
+
+Write a function with one parameter, the file name whose words we are 
+counting. The slurp function will read the file into a string.
+Use the re-seq function with two arguments, a regular expression [a-zA-Z]+ 
+and the string just created. It will return a lazy sequence with only the 
+characters selected, omitting punctuation, numerals, and whitespace. Use 
+the 'reduce' function with the first function you wrote and the sequence 
+of words just created starting with an empty hash {} to create the hash 
+table of frequencies. Use the sort-by function with the key function 
+'last' and the '>' operator to sort by frequency from high to low. Use the 
+spit function to output the result to a file. 
+
+Copy the ten most frequent words, with their frequencies, from the file.
+
+The program is three or so lines long and runs quite quickly.

@@ -1,0 +1,22 @@
+CECS 424 
+Lab 8
+Clojure Functions
+
+Write Clojure functions squares, sum, and numberOf. Do not use recursion. 
+Use higher-order functions map and filter. 
+
+squares has one integer parameter N and returns a list of size N of the 
+squares of float random numbers, one for each position in the list.  Use 
+rand to generate a random number. The repeatedly function will repeatedly 
+call a function of no arguments. The take function has two arguments an 
+integer and a collection. It will return the number of elements of the 
+collection specified by the integer parameter.
+
+sum has two list parameters of the same size. The list entries are floats. 
+sum returns a list in which each element is the sum of the corresponding 
+elements of the arguments.
+
+numberOf has a list parameter and returns an integer.  It returns the 
+number of elements of the list that are less than 1.
+
+

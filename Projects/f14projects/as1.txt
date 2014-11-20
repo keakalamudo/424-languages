@@ -1,0 +1,16 @@
+CECS 424 Assignment 1
+
+Write a Ruby program for the following. There are six possible letters a, 
+b, c, d, e, and f.  Input four letters for a pattern, and they may be 
+repeated, so they might be abcc or aadd, etc.  Then enter a test string of 
+four letters, say ddec. The computer returns two numbers, the number of 
+letters that exactly match the pattern chosen in advance, and the number 
+of letters that are in the pattern but that the user put in the wrong 
+position.  For example, if the pattern is abcc, some guesses and scores 
+are:
+                 adef     1, 0
+                 deaf     0, 1
+                 cabb     0, 3
+                 cccc     2, 0
+                 acbc     2, 2
+
